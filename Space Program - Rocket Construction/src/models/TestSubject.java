@@ -221,7 +221,7 @@ public class TestSubject {
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 7; j++) {
                 int chance = RAND.nextInt(100);
-                int calcChance = 15;
+                int calcChance = 25;
                 if (chance < calcChance) {
                     this.DNA[i][j] = RAND.nextInt(4);
                 }
