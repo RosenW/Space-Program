@@ -27,7 +27,7 @@ public class Game extends Canvas implements Runnable {
     private Window window;
 
     public Game() throws IOException {
-        population = new Population(20);
+        population = new Population(40);
         window = new Window(WIDTH, HEIGHT, TITLE, this);
     }
 
@@ -94,7 +94,7 @@ public class Game extends Canvas implements Runnable {
 
     private void tick() {
         this.population.tick();
-        this.window.setTitle("Generation: " + Population.GENERATION + " - Current Score: " + currentScore + " - Top score: " + Game.TOP_SCORE);
+        this.window.setTitle("Generation: " + Population.GENERATION);
     }
 
     private void render() {
@@ -108,10 +108,11 @@ public class Game extends Canvas implements Runnable {
         g.setColor(Color.LIGHT_GRAY);
         g.fillRect(0, 0, WIDTH, HEIGHT);
 
+
         population.render(g);
 
         g.setColor(Color.black);
-
+        g.setFont(new Font("Arial", 0, 25));
         g.drawString("Best Ship: ", 50, 100);
         BEST_SHIP.render(g);
 

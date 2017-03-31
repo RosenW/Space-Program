@@ -23,7 +23,7 @@ public class TestSubject {
 
     public TestSubject(int[][] DNA) {
         this.DNA = DNA;
-        color = new Color(RAND.nextInt(100) + 150, RAND.nextInt(100) + 150, RAND.nextInt(100) + 150);
+        color = new Color(RAND.nextInt(100) + 50, RAND.nextInt(100) + 50, RAND.nextInt(100) + 50);
         this.x = Game.WIDTH / 2;
         this.y = Game.HEIGHT - 100;
         this.fitness = 0;
@@ -233,7 +233,9 @@ public class TestSubject {
         if ((Game.HEIGHT - this.getY() - 100) * weight > this.fitness) {
             this.fitness = (Game.HEIGHT - this.getY() - 100) * weight;
         }
-        Game.currentScore = fitness;
+        if (fitness>Game.currentScore){
+            Game.currentScore = fitness;
+        }
         fuel--;
         if (fuel > 0) {
             x += xVelocity;
@@ -292,13 +294,12 @@ public class TestSubject {
             }
         }
         g.setColor(Color.black);
-        g.setFont(new Font("Arial", 0, 25));
-        if (fuel > 0)
-
-        {
-            g.drawString("Fuel: " + this.fuel, 50, 50);
+        g.setFont(new Font("Arial", 0, 11));
+        g.drawString("Score: " + this.getFitness(), this.x, this.y-10);
+        if (fuel > 0){
+            g.drawString("Fuel: " + this.fuel, this.x, this.y-20);
         } else {
-            g.drawString("Fuel: 0", 50, 50);
+            g.drawString("Fuel: 0", this.x, this.y-20);
         }
 
     }

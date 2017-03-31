@@ -18,6 +18,7 @@ public class Population {
     public static int GENERATION;
 
     public Population(int count) {
+        time = 0;
         index = 0;
         GENERATION = 1;
         this.populationCount = count;
@@ -35,26 +36,58 @@ public class Population {
     }
 
     public void tick() {
-        if (testSubjects.get(index).getFuel() > -50 && (testSubjects.get(index).getX() > -50 && testSubjects.get(index).getX() < Game.WIDTH + 50 && testSubjects.get(index).getY() < Game.HEIGHT)) {
-            testSubjects.get(index).tick();
+        ///////////////////////ALL ROCKETS AT ONCE//////(should change render() too)///////////////////
+        if (time < 200) {
+            for (TestSubject testSubject : testSubjects) {
+                testSubject.tick();
+            }
+            time++;
         } else {
-            if (Game.currentScore > Game.TOP_SCORE) {
-                Game.TOP_SCORE = Game.currentScore;
-                Game.BEST_SHIP = new ShipModel(testSubjects.get(index).getDNA(), testSubjects.get(index).getColor());
+            int currentMax = 0;
+            int maxShipIndex = 0;
+            for (int i = 0; i < testSubjects.size(); i++) {
+                TestSubject testSubject = testSubjects.get(i);
+                if (testSubject.getFitness() > currentMax) {
+                    currentMax = testSubject.getFitness();
+                    maxShipIndex = i;
+                }
+            }
+            if (currentMax > Game.TOP_SCORE) {
+                Game.TOP_SCORE = currentMax;
+                TestSubject ship = testSubjects.get(maxShipIndex);
+                Game.BEST_SHIP = new ShipModel(ship.getDNA(), ship.getColor(), ship.getFitness());
             }
             Game.currentScore = 0;
-            index++;
-            if (index == populationCount) {
-                index = 0;
-                List<TestSubject> nextGen = getNextGenerationKids();
-                List<TestSubject> mutatedTestSubjects = this.mutate(nextGen);
-                this.testSubjects.clear();
-                for (TestSubject mutatedTestSubject : mutatedTestSubjects) {
-                    this.testSubjects.add(new TestSubject(mutatedTestSubject.getDNA()));
-                }
-                GENERATION++;
+            List<TestSubject> nextGen = getNextGenerationKids();
+            List<TestSubject> mutatedTestSubjects = this.mutate(nextGen);
+            this.testSubjects.clear();
+            for (TestSubject mutatedTestSubject : mutatedTestSubjects) {
+                this.testSubjects.add(new TestSubject(mutatedTestSubject.getDNA()));
             }
+            time = 0;
+            GENERATION++;
         }
+        ///////////////////////ONE ROCKET AT A TIME//////(should change render() too)///////////////
+//        if (testSubjects.get(index).getFuel() > -50 && (testSubjects.get(index).getX() > -50 && testSubjects.get(index).getX() < Game.WIDTH + 50 && testSubjects.get(index).getY() < Game.HEIGHT)) {
+//            testSubjects.get(index).tick();
+//        } else {
+//            if (Game.currentScore > Game.TOP_SCORE) {
+//                Game.TOP_SCORE = Game.currentScore;
+//                Game.BEST_SHIP = new ShipModel(testSubjects.get(index).getDNA(), testSubjects.get(index).getColor());
+//            }
+//            Game.currentScore = 0;
+//            index++;
+//            if (index == populationCount) {
+//                index = 0;
+//                List<TestSubject> nextGen = getNextGenerationKids();
+//                List<TestSubject> mutatedTestSubjects = this.mutate(nextGen);
+//                this.testSubjects.clear();
+//                for (TestSubject mutatedTestSubject : mutatedTestSubjects) {
+//                    this.testSubjects.add(new TestSubject(mutatedTestSubject.getDNA()));
+//                }
+//                GENERATION++;
+//            }
+//        }
     }
 
     private List<TestSubject> mutate(List<TestSubject> matingPool) {
@@ -112,7 +145,10 @@ public class Population {
     }
 
     public void render(Graphics g) {
-        testSubjects.get(index).render(g);
+        for (TestSubject testSubject : testSubjects) {
+            testSubject.render(g);
+        }
+//        testSubjects.get(index).render(g);
     }
 
 

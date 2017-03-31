@@ -7,15 +7,17 @@ public class ShipModel {
     private static int y = 50;
     private int[][] DNA;
     private Color color;
+    private int score;
 
     public ShipModel() {
         DNA = new int[5][7];
         color = Color.black;
     }
 
-    public ShipModel(int[][] DNA, Color color) {
+    public ShipModel(int[][] DNA, Color color, int score) {
         this.DNA = DNA;
         this.color = color;
+        this.score = score;
     }
 
     public void render(Graphics g) {
@@ -66,6 +68,8 @@ public class ShipModel {
                 }
             }
         }
+        g.setColor(Color.black);
+        g.drawString(String.format("(%s)", this.score), 250, 100);
     }
 
     public int getX() {
