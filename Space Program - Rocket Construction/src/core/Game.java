@@ -2,6 +2,7 @@ package core;
 
 import display.Window;
 import models.ShipModel;
+import models.TestSubject;
 
 import java.awt.*;
 import java.awt.image.BufferStrategy;
@@ -18,7 +19,9 @@ public class Game extends Canvas implements Runnable {
 
     private Population population;
 
-    public static ShipModel BEST_SHIP = new ShipModel();
+    public static ShipModel BEST_SHIP_MODEL = new ShipModel();
+
+    public static TestSubject BEST_SHIP = new TestSubject(new int[5][7]);
 
     public static int currentScore = 0;
 
@@ -114,7 +117,7 @@ public class Game extends Canvas implements Runnable {
         g.setColor(Color.black);
         g.setFont(new Font("Arial", 0, 25));
         g.drawString("Best Ship: ", 50, 100);
-        BEST_SHIP.render(g);
+        BEST_SHIP_MODEL.render(g);
 
         g.dispose();
         bs.show();

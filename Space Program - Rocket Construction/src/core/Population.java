@@ -55,7 +55,8 @@ public class Population {
             if (currentMax > Game.TOP_SCORE) {
                 Game.TOP_SCORE = currentMax;
                 TestSubject ship = testSubjects.get(maxShipIndex);
-                Game.BEST_SHIP = new ShipModel(ship.getDNA(), ship.getColor(), ship.getFitness());
+                Game.BEST_SHIP_MODEL = new ShipModel(ship.getDNA(), ship.getColor(), ship.getFitness());
+                Game.BEST_SHIP = ship;
             }
             Game.currentScore = 0;
             List<TestSubject> nextGen = getNextGenerationKids();
@@ -73,7 +74,7 @@ public class Population {
 //        } else {
 //            if (Game.currentScore > Game.TOP_SCORE) {
 //                Game.TOP_SCORE = Game.currentScore;
-//                Game.BEST_SHIP = new ShipModel(testSubjects.get(index).getDNA(), testSubjects.get(index).getColor());
+//                Game.BEST_SHIP_MODEL = new ShipModel(testSubjects.get(index).getDNA(), testSubjects.get(index).getColor());
 //            }
 //            Game.currentScore = 0;
 //            index++;
@@ -134,7 +135,7 @@ public class Population {
                 nextGen.add(new TestSubject(matingPool.get(8).getDNA()));
             }
             for (int i = 0; i < populationCount / 20; i++) {
-                nextGen.add(new TestSubject(matingPool.get(9).getDNA()));
+                nextGen.add(Game.BEST_SHIP);
             }
             if (this.testSubjects.size() < populationCount) {
                 nextGen.add(new TestSubject(matingPool.get(RAND.nextInt(populationCount / 4 + 1)).getDNA()));
