@@ -230,15 +230,15 @@ public class TestSubject {
     }
 
     public void tick() {
-        if (this.getX() < -50 ){
+        if (this.getX() < -50) {
             this.setX(Game.WIDTH);
         }
-        if (this.getX()>Game.WIDTH){
+        if (this.getX() > Game.WIDTH) {
             this.setX(-50);
         }
-            if ((Game.HEIGHT - this.getY() - 100) * weight > this.fitness) {
-                this.fitness = (Game.HEIGHT - this.getY() - 100) * weight;
-            }
+        if ((Game.HEIGHT - this.getY() - 100) * weight > this.fitness) {
+            this.fitness = (Game.HEIGHT - this.getY() - 100) * weight;
+        }
         if (fitness > Game.currentScore) {
             Game.currentScore = fitness;
         }
@@ -301,13 +301,21 @@ public class TestSubject {
         }
         g.setColor(Color.black);
         g.setFont(new Font("Arial", 0, 11));
-        g.drawString("Score: " + this.getFitness(), this.x, this.y - 10);
-        if (fuel > 0) {
-            g.drawString("Fuel: " + this.fuel, this.x, this.y - 20);
+        if (this.y < 0) {
+            g.drawString("Score: " + this.getFitness(), this.x, 10);
+            if (fuel > 0) {
+                g.drawString("Fuel: " + this.fuel, this.x, 20);
+            } else {
+                g.drawString("Fuel: 0", this.x, 20);
+            }
         } else {
-            g.drawString("Fuel: 0", this.x, this.y - 20);
+            g.drawString("Score: " + this.getFitness(), this.x, this.y - 10);
+            if (fuel > 0) {
+                g.drawString("Fuel: " + this.fuel, this.x, this.y - 20);
+            } else {
+                g.drawString("Fuel: 0", this.x, this.y - 20);
+            }
         }
-
     }
 
     public int getX() {

@@ -31,8 +31,8 @@
       <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/core/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="23" column="72" lean-forward="false" selection-start-line="23" selection-start-column="72" selection-end-line="23" selection-end-column="72" />
+            <state relative-caret-position="357">
+              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#run#0;class#Game#0" expanded="false" />
@@ -43,11 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestSubject.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TestSubject.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/models/TestSubject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="236" column="27" lean-forward="true" selection-start-line="236" selection-start-column="27" selection-end-line="236" selection-end-column="27" />
+            <state relative-caret-position="425">
+              <caret line="308" column="48" lean-forward="true" selection-start-line="308" selection-start-column="48" selection-end-line="308" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#calculateVelocity#0;class#TestSubject#0" expanded="false" />
@@ -57,7 +57,6 @@
                 <element signature="method#constructRocket#0;class#TestSubject#0" expanded="false" />
                 <element signature="method#cleanDNA#0;class#TestSubject#0" expanded="false" />
                 <element signature="method#checkChromosome#0;class#TestSubject#0" expanded="false" />
-                <element signature="method#mutate#0;class#TestSubject#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -90,11 +89,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Population.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Population.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/core/Population.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="582">
-              <caret line="137" column="44" lean-forward="false" selection-start-line="137" selection-start-column="44" selection-end-line="137" selection-end-column="44" />
+            <state relative-caret-position="245">
+              <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
               <folding>
                 <element signature="method#mutate#0;class#Population#0" expanded="false" />
               </folding>
@@ -136,9 +135,9 @@
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/display/Window.java" />
         <option value="$PROJECT_DIR$/src/models/ShipModel.java" />
-        <option value="$PROJECT_DIR$/src/models/TestSubject.java" />
         <option value="$PROJECT_DIR$/src/core/Game.java" />
         <option value="$PROJECT_DIR$/src/core/Population.java" />
+        <option value="$PROJECT_DIR$/src/models/TestSubject.java" />
       </list>
     </option>
   </component>
@@ -542,15 +541,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/models/TestSubject.java</url>
-          <line>212</line>
-          <properties />
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="20" />
+      <option name="time" value="23" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -605,7 +596,6 @@
             <element signature="method#constructRocket#0;class#TestSubject#0" expanded="false" />
             <element signature="method#cleanDNA#0;class#TestSubject#0" expanded="false" />
             <element signature="method#checkChromosome#0;class#TestSubject#0" expanded="false" />
-            <element signature="method#mutate#0;class#TestSubject#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -668,7 +658,6 @@
             <element signature="method#constructRocket#0;class#TestSubject#0" expanded="false" />
             <element signature="method#cleanDNA#0;class#TestSubject#0" expanded="false" />
             <element signature="method#checkChromosome#0;class#TestSubject#0" expanded="false" />
-            <element signature="method#mutate#0;class#TestSubject#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -731,7 +720,6 @@
             <element signature="method#constructRocket#0;class#TestSubject#0" expanded="false" />
             <element signature="method#cleanDNA#0;class#TestSubject#0" expanded="false" />
             <element signature="method#checkChromosome#0;class#TestSubject#0" expanded="false" />
-            <element signature="method#mutate#0;class#TestSubject#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -771,15 +759,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/Game.java">
+    <entry file="file://$PROJECT_DIR$/src/core/Population.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="23" column="72" lean-forward="false" selection-start-line="23" selection-start-column="72" selection-end-line="23" selection-end-column="72" />
+        <state relative-caret-position="245">
+          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#run#0;class#Game#0" expanded="false" />
-            <element signature="method#start#0;class#Game#0" expanded="false" />
-            <element signature="method#stop#0;class#Game#0" expanded="false" />
+            <element signature="method#mutate#0;class#Population#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -809,10 +794,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#run#0;class#Game#0" expanded="false" />
+            <element signature="method#start#0;class#Game#0" expanded="false" />
+            <element signature="method#stop#0;class#Game#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/TestSubject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="236" column="27" lean-forward="true" selection-start-line="236" selection-start-column="27" selection-end-line="236" selection-end-column="27" />
+        <state relative-caret-position="425">
+          <caret line="308" column="48" lean-forward="true" selection-start-line="308" selection-start-column="48" selection-end-line="308" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#calculateVelocity#0;class#TestSubject#0" expanded="false" />
@@ -822,17 +820,6 @@
             <element signature="method#constructRocket#0;class#TestSubject#0" expanded="false" />
             <element signature="method#cleanDNA#0;class#TestSubject#0" expanded="false" />
             <element signature="method#checkChromosome#0;class#TestSubject#0" expanded="false" />
-            <element signature="method#mutate#0;class#TestSubject#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/Population.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="582">
-          <caret line="137" column="44" lean-forward="false" selection-start-line="137" selection-start-column="44" selection-end-line="137" selection-end-column="44" />
-          <folding>
-            <element signature="method#mutate#0;class#Population#0" expanded="false" />
           </folding>
         </state>
       </provider>

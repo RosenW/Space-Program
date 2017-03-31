@@ -14,6 +14,7 @@ public class Population {
     private int time;
     private int populationCount;
     private int index;
+    private int mostFueledShip = 200;
 
     public static int GENERATION;
 
@@ -33,11 +34,12 @@ public class Population {
             TestSubject curTestSubject = new TestSubject(curDNA);
             testSubjects.add(curTestSubject);
         }
+        setMostFueledShip();
     }
 
     public void tick() {
         ///////////////////////ALL ROCKETS AT ONCE//////(should change render() too)///////////////////
-        if (time < 200) {
+        if (time < mostFueledShip) {
             for (TestSubject testSubject : testSubjects) {
                 testSubject.tick();
             }
@@ -65,6 +67,7 @@ public class Population {
             for (TestSubject mutatedTestSubject : mutatedTestSubjects) {
                 this.testSubjects.add(new TestSubject(mutatedTestSubject.getDNA()));
             }
+            setMostFueledShip();
             time = 0;
             GENERATION++;
         }
@@ -89,6 +92,15 @@ public class Population {
 //                GENERATION++;
 //            }
 //        }
+    }
+
+    private void setMostFueledShip() {
+        mostFueledShip = 0;
+        for (TestSubject testSubject : testSubjects) {
+            if (testSubject.getFuel()>mostFueledShip){
+                mostFueledShip = testSubject.getFuel();
+            }
+        }
     }
 
     private List<TestSubject> mutate(List<TestSubject> matingPool) {
