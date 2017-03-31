@@ -18,7 +18,6 @@ public class Population {
 
     public Population(int count) {
         index = 0;
-        time = 500000;
         GENERATION = 1;
         this.populationCount = count;
         this.testSubjects = new ArrayList<>();
