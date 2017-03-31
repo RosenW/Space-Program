@@ -21,10 +21,9 @@ public class TestSubject {
     private int xVelocity;
     private int yVelocity;
 
-
     public TestSubject(int[][] DNA) {
         this.DNA = DNA;
-        color = new Color(RAND.nextInt(100) + 100, RAND.nextInt(100) + 100, RAND.nextInt(100) + 100);
+        color = new Color(RAND.nextInt(100) + 150, RAND.nextInt(100) + 150, RAND.nextInt(100) + 150);
         this.x = Game.WIDTH / 2;
         this.y = Game.HEIGHT - 100;
         this.fitness = 0;
@@ -248,7 +247,7 @@ public class TestSubject {
         for (int x = 0; x < 5; x++) {
             for (int y = 0; y < 7; y++) {
                 if (DNA[x][y] == 4) {
-                    g.setColor(Color.black);
+                    g.setColor(this.color);
                 }
                 if (DNA[x][y] == 2) {
                     g.setColor(Color.red);
@@ -293,9 +292,7 @@ public class TestSubject {
             }
         }
         g.setColor(Color.black);
-        g.setFont(new
-
-                Font("Arial", 0, 25));
+        g.setFont(new Font("Arial", 0, 25));
         if (fuel > 0)
 
         {

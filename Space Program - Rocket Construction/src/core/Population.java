@@ -1,5 +1,6 @@
 package core;
 
+import models.ShipModel;
 import models.TestSubject;
 
 import java.awt.*;
@@ -37,8 +38,9 @@ public class Population {
         if (testSubjects.get(index).getFuel() > -50 && (testSubjects.get(index).getX() > -50 && testSubjects.get(index).getX() < Game.WIDTH + 50 && testSubjects.get(index).getY() < Game.HEIGHT)) {
             testSubjects.get(index).tick();
         } else {
-            if (Game.currentScore > Game.TOPSCORE) {
-                Game.TOPSCORE = Game.currentScore;
+            if (Game.currentScore > Game.TOP_SCORE) {
+                Game.TOP_SCORE = Game.currentScore;
+                Game.BEST_SHIP = new ShipModel(testSubjects.get(index).getDNA(), testSubjects.get(index).getColor());
             }
             Game.currentScore = 0;
             index++;

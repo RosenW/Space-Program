@@ -1,6 +1,7 @@
 package core;
 
 import display.Window;
+import models.ShipModel;
 
 import java.awt.*;
 import java.awt.image.BufferStrategy;
@@ -17,9 +18,11 @@ public class Game extends Canvas implements Runnable {
 
     private Population population;
 
+    public static ShipModel BEST_SHIP = new ShipModel();
+
     public static int currentScore = 0;
 
-    public static int TOPSCORE = 0;
+    public static int TOP_SCORE = 0;
 
     private Window window;
 
@@ -91,7 +94,7 @@ public class Game extends Canvas implements Runnable {
 
     private void tick() {
         this.population.tick();
-        this.window.setTitle("Generation: " + Population.GENERATION + " - Current Score: " + currentScore + " - Top score: " + Game.TOPSCORE);
+        this.window.setTitle("Generation: " + Population.GENERATION + " - Current Score: " + currentScore + " - Top score: " + Game.TOP_SCORE);
     }
 
     private void render() {
@@ -106,6 +109,11 @@ public class Game extends Canvas implements Runnable {
         g.fillRect(0, 0, WIDTH, HEIGHT);
 
         population.render(g);
+
+        g.setColor(Color.black);
+
+        g.drawString("Best Ship: ", 50, 100);
+        BEST_SHIP.render(g);
 
         g.dispose();
         bs.show();
