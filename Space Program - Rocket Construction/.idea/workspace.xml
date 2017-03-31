@@ -28,11 +28,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Game.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/core/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" column="37" lean-forward="false" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
+            <state relative-caret-position="255">
+              <caret line="15" column="35" lean-forward="true" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#run#0;class#Game#0" expanded="false" />
@@ -43,11 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestSubject.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TestSubject.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/models/TestSubject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="297" column="69" lean-forward="false" selection-start-line="297" selection-start-column="69" selection-end-line="297" selection-end-column="69" />
+            <state relative-caret-position="272">
+              <caret line="236" column="27" lean-forward="true" selection-start-line="236" selection-start-column="27" selection-end-line="236" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#calculateVelocity#0;class#TestSubject#0" expanded="false" />
@@ -137,8 +137,8 @@
         <option value="$PROJECT_DIR$/src/display/Window.java" />
         <option value="$PROJECT_DIR$/src/core/Population.java" />
         <option value="$PROJECT_DIR$/src/models/ShipModel.java" />
-        <option value="$PROJECT_DIR$/src/models/TestSubject.java" />
         <option value="$PROJECT_DIR$/src/core/Game.java" />
+        <option value="$PROJECT_DIR$/src/models/TestSubject.java" />
       </list>
     </option>
   </component>
@@ -806,10 +806,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="35" lean-forward="true" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#run#0;class#Game#0" expanded="false" />
+            <element signature="method#start#0;class#Game#0" expanded="false" />
+            <element signature="method#stop#0;class#Game#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/TestSubject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="297" column="69" lean-forward="false" selection-start-line="297" selection-start-column="69" selection-end-line="297" selection-end-column="69" />
+        <state relative-caret-position="272">
+          <caret line="236" column="27" lean-forward="true" selection-start-line="236" selection-start-column="27" selection-end-line="236" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#calculateVelocity#0;class#TestSubject#0" expanded="false" />
@@ -820,19 +833,6 @@
             <element signature="method#cleanDNA#0;class#TestSubject#0" expanded="false" />
             <element signature="method#checkChromosome#0;class#TestSubject#0" expanded="false" />
             <element signature="method#mutate#0;class#TestSubject#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="37" lean-forward="false" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#run#0;class#Game#0" expanded="false" />
-            <element signature="method#start#0;class#Game#0" expanded="false" />
-            <element signature="method#stop#0;class#Game#0" expanded="false" />
           </folding>
         </state>
       </provider>
