@@ -231,8 +231,8 @@ public class TestSubject {
     }
 
     public void tick() {
-        if (Game.HEIGHT - this.getY() - 100 > this.fitness) {
-            this.fitness = Game.HEIGHT - this.getY() - 100;
+        if ((Game.HEIGHT - this.getY() - 100) * weight > this.fitness) {
+            this.fitness = (Game.HEIGHT - this.getY() - 100) * weight;
         }
         Game.currentScore = fitness;
         fuel--;
@@ -260,7 +260,7 @@ public class TestSubject {
                     g.setColor(Color.yellow);
                 }
                 if (DNA[x][y] != 0) {
-                    if ((DNA[x][y] == 2 && this.fuel>0) || DNA[x][y] == 3) {
+                    if ((DNA[x][y] == 2 && this.fuel > 0) || DNA[x][y] == 3) {
                         if (y > 0) {
                             if (DNA[x][y - 1] == 4) {
                                 g.fillRect(x * 10 + this.x + 1, y * 10 + this.y, 8, 5);
@@ -286,7 +286,7 @@ public class TestSubject {
                             }
                         }
                     }
-                    if (DNA[x][y]==4 || DNA[x][y]==9){
+                    if (DNA[x][y] == 4 || DNA[x][y] == 9) {
                         g.fillRect(x * 10 + this.x, y * 10 + this.y, 10, 10);
                     }
                 }
