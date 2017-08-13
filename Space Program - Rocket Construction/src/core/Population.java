@@ -14,7 +14,7 @@ public class Population {
     private int time;
     private int populationCount;
     private int index;
-    private int mostFueledShip = 200;
+    private int mostFueledShip = 50;
 
     public static int GENERATION;
 

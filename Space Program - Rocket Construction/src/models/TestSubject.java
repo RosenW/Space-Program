@@ -24,7 +24,7 @@ public class TestSubject {
     public TestSubject(int[][] DNA) {
         this.DNA = DNA;
         color = new Color(RAND.nextInt(100) + 50, RAND.nextInt(100) + 50, RAND.nextInt(100) + 50);
-        this.x = Game.WIDTH / 2;
+        this.x = getRAND().nextInt(Game.WIDTH);
         this.y = Game.HEIGHT - 100;
         this.fitness = 0;
         this.fuel = 0;
