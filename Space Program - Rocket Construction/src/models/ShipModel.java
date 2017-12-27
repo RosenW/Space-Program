@@ -8,16 +8,20 @@ public class ShipModel {
     private int[][] DNA;
     private Color color;
     private int score;
+    private int weight;
+    private int distance;
 
     public ShipModel() {
         DNA = new int[5][7];
         color = Color.black;
     }
 
-    public ShipModel(int[][] DNA, Color color, int score) {
+    public ShipModel(int[][] DNA, Color color, int score, int weight, int distance) {
         this.DNA = DNA;
         this.color = color;
         this.score = score;
+        this.weight = weight;
+        this.distance = distance;
     }
 
     public void render(Graphics g) {
@@ -69,7 +73,10 @@ public class ShipModel {
             }
         }
         g.setColor(Color.black);
-        g.drawString(String.format("(%s)", this.score), 250, 100);
+        g.setFont(new Font("Arial", 0, 15));
+        g.drawString(String.format("Score: %s", this.score), 250, 80);
+        g.drawString(String.format("Distance: %skm", this.distance), 250, 95);
+        g.drawString(String.format("Passengers: %s", this.weight * 10), 250, 110);
     }
 
     public int getX() {

@@ -18,6 +18,8 @@ public class TestSubject {
     private int speedLeft;
     private int speedRight;
     private int weight;
+    private int distance;
+    private int realityMultiplier;
     private int xVelocity;
     private int yVelocity;
 
@@ -29,6 +31,7 @@ public class TestSubject {
         this.fitness = 0;
         this.fuel = 0;
         this.weight = 0;
+        this.realityMultiplier = 8;
 
         DNA[2][4] = 9;
 
@@ -52,7 +55,7 @@ public class TestSubject {
     private void calculateWeight(int[][] DNA) {
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 7; j++) {
-                if (DNA[i][j] == 9 || DNA[i][j] == 4 || DNA[i][j] == 3) {
+                if (DNA[i][j] == 9 || DNA[i][j] == 4) {
                     weight++;
                 }
             }
@@ -236,11 +239,12 @@ public class TestSubject {
         if (this.getX() > Game.WIDTH) {
             this.setX(-50);
         }
-        if ((Game.HEIGHT - this.getY() - 100) * weight > this.fitness) {
-            this.fitness = (Game.HEIGHT - this.getY() - 100) * weight;
+        if ((Game.HEIGHT - this.getY() - 100) * realityMultiplier * weight > this.fitness) {
+            this.setDistance((Game.HEIGHT - this.getY() - 100) * realityMultiplier);
+            this.setFitness(this.getDistance() * this.getWeight());
         }
-        if (fitness > Game.currentScore) {
-            Game.currentScore = fitness;
+        if (this.getFitness() > Game.currentScore) {
+            Game.currentScore = this.getFitness();
         }
         fuel--;
         if (fuel > 0) {
@@ -308,6 +312,8 @@ public class TestSubject {
             } else {
                 g.drawString("Fuel: 0", this.x, 20);
             }
+            g.drawString("Distance: " + this.getDistance(), this.x, 30);
+            g.drawString("Passengers: " + this.getWeight() * 10, this.x, 40);
         } else {
             g.drawString("Score: " + this.getFitness(), this.x, this.y - 10);
             if (fuel > 0) {
@@ -315,6 +321,8 @@ public class TestSubject {
             } else {
                 g.drawString("Fuel: 0", this.x, this.y - 20);
             }
+            //g.drawString("Distance: " + this.getDistance(), this.x, this.y - 30);
+            //g.drawString("Passengers: " + this.getWeight() * 10, this.x, this.y - 40);
         }
     }
 
@@ -366,8 +374,24 @@ public class TestSubject {
         return speedRight;
     }
 
+    public int getRealityMultiplier() {
+        return realityMultiplier;
+    }
+
+    public void setRealityMultiplier(int realityMultiplier) {
+        this.realityMultiplier = realityMultiplier;
+    }
+
     public void setSpeedRight(int speedRight) {
         this.speedRight = speedRight;
+    }
+
+    public int getDistance() {
+        return distance;
+    }
+
+    public void setDistance(int distance) {
+        this.distance = distance;
     }
 
     public int getWeight() {
