@@ -1,6 +1,8 @@
 package models;
 
+import com.sun.org.apache.bcel.internal.generic.POP;
 import core.Game;
+import core.Population;
 
 import java.awt.*;
 import java.util.Random;
@@ -274,56 +276,47 @@ public class TestSubject {
                     if ((DNA[x][y] == 2 && this.fuel > 0) || DNA[x][y] == 3) {
                         if (y > 0) {
                             if (DNA[x][y - 1] == 4) {
-                                g.fillRect(x * 10 + this.x + 1, y * 10 + this.y, 8, 5);
+                                g.fillRect(x * 10 + this.x + 1, y * 10 + this.y - Population.Y_OFFSET, 8, 5);
                                 continue;
                             }
                         }
                         if (x < 4) {
                             if (DNA[x + 1][y] == 4) {
-                                g.fillRect(x * 10 + this.x + 5, y * 10 + this.y + 1, 5, 8);
+                                g.fillRect(x * 10 + this.x + 5, y * 10 + this.y + 1 - Population.Y_OFFSET, 5, 8);
                                 continue;
                             }
                         }
                         if (x > 0) {
                             if (DNA[x - 1][y] == 4) {
-                                g.fillRect(x * 10 + this.x, y * 10 + this.y + 1, 5, 8);
+                                g.fillRect(x * 10 + this.x, y * 10 + this.y + 1 - Population.Y_OFFSET, 5, 8);
                                 continue;
                             }
                         }
                         if (y < 6) {
                             if (DNA[x][y + 1] == 4) {
-                                g.fillRect(x * 10 + this.x + 1, y * 10 + this.y + 5, 8, 5);
+                                g.fillRect(x * 10 + this.x + 1, y * 10 + this.y + 5 - Population.Y_OFFSET, 8, 5);
                                 continue;
                             }
                         }
                     }
                     if (DNA[x][y] == 4 || DNA[x][y] == 9) {
-                        g.fillRect(x * 10 + this.x, y * 10 + this.y, 10, 10);
+                        g.fillRect(x * 10 + this.x, y * 10 + this.y - Population.Y_OFFSET, 10, 10);
                     }
                 }
             }
         }
         g.setColor(Color.black);
         g.setFont(new Font("Arial", 0, 11));
-        if (this.y < 0) {
-            g.drawString("Score: " + this.getFitness(), this.x, 10);
-            if (fuel > 0) {
-                g.drawString("Fuel: " + this.fuel, this.x, 20);
-            } else {
-                g.drawString("Fuel: 0", this.x, 20);
-            }
-            g.drawString("Distance: " + this.getDistance(), this.x, 30);
-            g.drawString("Passengers: " + this.getWeight() * 10, this.x, 40);
+
+        g.drawString("Score: " + this.getFitness(), this.x, this.y - 10 - Population.Y_OFFSET);
+        if (fuel > 0) {
+            g.drawString("Fuel: " + this.fuel, this.x, this.y - 20 - Population.Y_OFFSET);
         } else {
-            g.drawString("Score: " + this.getFitness(), this.x, this.y - 10);
-            if (fuel > 0) {
-                g.drawString("Fuel: " + this.fuel, this.x, this.y - 20);
-            } else {
-                g.drawString("Fuel: 0", this.x, this.y - 20);
-            }
-            //g.drawString("Distance: " + this.getDistance(), this.x, this.y - 30);
-            //g.drawString("Passengers: " + this.getWeight() * 10, this.x, this.y - 40);
+            g.drawString("Fuel: 0", this.x, this.y - 20 - Population.Y_OFFSET);
         }
+        g.drawString("Distance: " + this.getDistance(), this.x, this.y - 30 - Population.Y_OFFSET);
+        g.drawString("Passengers: " + this.getWeight() * 10, this.x, this.y - 40 - Population.Y_OFFSET);
+
     }
 
     public int getX() {

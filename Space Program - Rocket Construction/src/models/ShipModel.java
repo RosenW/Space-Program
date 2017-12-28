@@ -1,5 +1,7 @@
 package models;
 
+import core.Population;
+
 import java.awt.*;
 
 public class ShipModel {
@@ -77,6 +79,7 @@ public class ShipModel {
         g.drawString(String.format("Score: %s", this.score), 250, 80);
         g.drawString(String.format("Distance: %skm", this.distance), 250, 95);
         g.drawString(String.format("Passengers: %s", this.weight * 10), 250, 110);
+        g.drawString(String.format("YOFFSET: %s", Population.Y_OFFSET * -1), 250, 125);
     }
 
     public int getX() {

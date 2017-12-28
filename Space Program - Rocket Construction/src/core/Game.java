@@ -98,6 +98,7 @@ public class Game extends Canvas implements Runnable {
     private void tick() {
         this.population.tick();
         this.window.setTitle("Generation: " + Population.GENERATION);
+
     }
 
     private void render() {

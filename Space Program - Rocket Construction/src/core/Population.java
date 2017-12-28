@@ -16,12 +16,12 @@ public class Population {
     private int index;
     private int mostFueledShip = 50;
 
-    public static int GENERATION;
+    public static int GENERATION = 1;
+    public static int Y_OFFSET = 0;
 
     public Population(int count) {
         time = 0;
         index = 0;
-        GENERATION = 1;
         this.populationCount = count;
         this.testSubjects = new ArrayList<>();
         for (int i = 0; i < populationCount; i++) {
@@ -40,9 +40,16 @@ public class Population {
     public void tick() {
         ///////////////////////ALL ROCKETS AT ONCE//////(should change render() too)///////////////////
         if (time < mostFueledShip) {
+            int highestY = 0;
             for (TestSubject testSubject : testSubjects) {
+
+                if (testSubject.getY() - 180 < highestY) {
+                    highestY = testSubject.getY()-180;
+                }
+
                 testSubject.tick();
             }
+            Population.Y_OFFSET = highestY;
             time++;
         } else {
             int currentMax = 0;
@@ -97,7 +104,7 @@ public class Population {
     private void setMostFueledShip() {
         mostFueledShip = 0;
         for (TestSubject testSubject : testSubjects) {
-            if (testSubject.getFuel()>mostFueledShip){
+            if (testSubject.getFuel() > mostFueledShip) {
                 mostFueledShip = testSubject.getFuel();
             }
         }
