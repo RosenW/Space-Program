@@ -1,6 +1,5 @@
 package models;
 
-import com.sun.org.apache.bcel.internal.generic.POP;
 import core.Game;
 import core.Population;
 
@@ -245,8 +244,8 @@ public class TestSubject {
             this.setDistance((Game.HEIGHT - this.getY() - 100) * realityMultiplier);
             this.setFitness(this.getDistance() * this.getWeight());
         }
-        if (this.getFitness() > Game.currentScore) {
-            Game.currentScore = this.getFitness();
+        if (this.getFitness() > Game.CURRENT_SCORE) {
+            Game.CURRENT_SCORE = this.getFitness();
         }
         fuel--;
         if (fuel > 0) {
@@ -305,7 +304,11 @@ public class TestSubject {
                 }
             }
         }
-        g.setColor(Color.black);
+        if(Game.TRANSPARENCY >0.5){
+            g.setColor(Color.BLACK);
+        }else {
+            g.setColor(Color.WHITE);
+        }
         g.setFont(new Font("Arial", 0, 11));
 
         g.drawString("Score: " + this.getFitness(), this.x, this.y - 10 - Population.Y_OFFSET);

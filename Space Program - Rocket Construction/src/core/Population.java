@@ -67,7 +67,7 @@ public class Population {
                 Game.BEST_SHIP_MODEL = new ShipModel(ship.getDNA(), ship.getColor(), ship.getFitness(), ship.getWeight(), ship.getDistance());
                 Game.BEST_SHIP = ship;
             }
-            Game.currentScore = 0;
+            Game.CURRENT_SCORE = 0;
             List<TestSubject> nextGen = getNextGenerationKids();
             List<TestSubject> mutatedTestSubjects = this.mutate(nextGen);
             this.testSubjects.clear();
@@ -186,6 +186,16 @@ public class Population {
 
     public static void setRAND(Random RAND) {
         Population.RAND = RAND;
+    }
+
+    public int getHighestDistance(){
+        int highestDistance = 0;
+        for (TestSubject testSubject : testSubjects) {
+            if (testSubject.getY()< highestDistance){
+                highestDistance = testSubject.getY();
+            }
+        }
+        return highestDistance;
     }
 
 }
